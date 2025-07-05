@@ -2,10 +2,10 @@
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:
+  name: {{ include "hostListenerName" . }}
   labels:
     app: coprocessor-host-listener
     app.kubernetes.io/name: {{ include "hostListenerName" . }}
-  name: {{ include "hostListenerName" . }}
 spec:
   selector:
     matchLabels:
