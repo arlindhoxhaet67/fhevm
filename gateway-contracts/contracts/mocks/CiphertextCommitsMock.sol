@@ -12,12 +12,10 @@ contract CiphertextCommitsMock {
 
     function addCiphertextMaterial(
         bytes32 ctHandle,
-        uint256 keyId,
+        uint256,
         bytes32 ciphertextDigest,
         bytes32 snsCiphertextDigest
     ) external {
-        address[] memory coprocessorTxSenders = new address[](1);
-
-        emit AddCiphertextMaterial(ctHandle, ciphertextDigest, snsCiphertextDigest, coprocessorTxSenders);
+        emit AddCiphertextMaterial(ctHandle, ciphertextDigest, snsCiphertextDigest, new address[](1));
     }
 }
